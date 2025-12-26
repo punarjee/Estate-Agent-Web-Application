@@ -1,85 +1,63 @@
-import React, { useState } from 'react';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import SearchPage from './components/SearchPage';
-import PropertyPage from './components/PropertyPage';
-import propertiesData from './propertiesData.json';
-import './App.css';
+import React from 'react';
+import { useDrag } from 'react-dnd';
+import './FavouriteItem.css';
 
-function App() {
-  const [currentView, setCurrentView] = useState('search');
-  const [selectedProperty, setSelectedProperty] = useState(null);
-  const [favourites, setFavourites] = useState([]);
+const ItemTypes = {
+  FAVOURITE: 'favourite'
+};
 
-  // Navigate to property detail page
-  const viewProperty = (propertyId) => {
-    const property = propertiesData.properties.find(p => p.id === propertyId);
-    setSelectedProperty(property);
-    setCurrentView('property');
-  };
+function FavouriteItem({ property, viewProperty, removeFromFavourites }) {
+  // Setup drag functionality for removing
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ItemTypes.FAVOURITE,
+    item: { id: property.id },
+    end: (item, monitor) => {
+      const didDrop = monitor.didDrop();
+      if (!didDrop) {
+        // If dropped outside, remove from favourites
+        removeFromFavourites(item.id);
+      }
+    },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging()
+    })
+  }));
 
-  // Navigate back to search page
-  const backToSearch = () => {
-    setCurrentView('search');
-    setSelectedProperty(null);
-  };
-
-  // Add property to favourites (prevent duplicates)
-  const addToFavourites = (propertyId) => {
-    if (!favourites.includes(propertyId)) {
-      setFavourites([...favourites, propertyId]);
-    }
-  };
-
-  // Remove property from favourites
-  const removeFromFavourites = (propertyId) => {
-    setFavourites(favourites.filter(id => id !== propertyId));
-  };
-
-  // Clear all favourites
-  const clearFavourites = () => {
-    setFavourites([]);
-  };
+  const formattedPrice = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 0
+  }).format(property.price);
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div className="App">
-        <header className="app-header">
-          <div className="header-content">
-            <h1 onClick={backToSearch} style={{ cursor: 'pointer' }}>
-              EstateAgent Pro
-            </h1>
-            <p>Find Your Dream Home</p>
-          </div>
-        </header>
-
-        <main className="app-main">
-          {currentView === 'search' ? (
-            <SearchPage
-              properties={propertiesData.properties}
-              viewProperty={viewProperty}
-              favourites={favourites}
-              addToFavourites={addToFavourites}
-              removeFromFavourites={removeFromFavourites}
-              clearFavourites={clearFavourites}
-            />
-          ) : (
-            <PropertyPage
-              property={selectedProperty}
-              backToSearch={backToSearch}
-              isFavourite={favourites.includes(selectedProperty?.id)}
-              addToFavourites={addToFavourites}
-              removeFromFavourites={removeFromFavourites}
-            />
-          )}
-        </main>
-
-        <footer className="app-footer">
-          <p>&copy; 2024 EstateAgent Pro. All rights reserved.</p>
-        </footer>
+    <div 
+      ref={drag}
+      className={`favourite-item ${isDragging ? 'dragging' : ''}`}
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
+      <img 
+        src={property.picture} 
+        alt={property.location}
+        onClick={() => viewProperty(property.id)}
+        style={{ cursor: 'pointer' }}
+      />
+      <div className="favourite-info">
+        <p className="favourite-price">{formattedPrice}</p>
+        <p className="favourite-location">{property.location}</p>
+        <p className="favourite-features">
+          {property.type} • {property.bedrooms} bed{property.bedrooms !== 1 ? 's' : ''}
+        </p>
       </div>
-    </DndProvider>
+      <button
+        className="remove-favourite"
+        onClick={() => removeFromFavourites(property.id)}
+        aria-label="Remove from favourites"
+        title="Remove from favourites"
+      >
+        ×
+      </button>
+    </div>
   );
 }
 
-export default App;
+export default FavouriteItem;
