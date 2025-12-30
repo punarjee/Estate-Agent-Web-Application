@@ -45,11 +45,17 @@ function App() {
     <DndProvider backend={HTML5Backend}>
       <div className="App">
         <header className="app-header">
+
+            <video className="header-video" autoPlay loop muted playsInline>
+              <source src="/videos/header-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
           <div className="header-content">
             <h1 onClick={backToSearch} style={{ cursor: 'pointer' }}>
-              EstateAgent Pro
+              Home Vista
             </h1>
-            <p>Find Your Dream Home</p>
+            <p>Your one stop platform for finding the perfect property</p>
           </div>
         </header>
 
