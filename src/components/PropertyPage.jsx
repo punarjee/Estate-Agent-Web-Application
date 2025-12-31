@@ -130,14 +130,16 @@ function PropertyPage({
                 <h3>Location Map</h3>
                 <div className="map-container">
                   <iframe
+                  src={property.map}
                     title="Property Location"
                     width="100%"
                     height="450"
                     style={{ border: 0 }}
                     loading="lazy"
-                    allowFullScreen
-                    src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(property.location)}`}
-                  />
+                    allowFullScreen>
+                      
+                    </iframe>
+                 
                   <p className="map-note">
                     Map showing approximate location of {property.location}
                   </p>

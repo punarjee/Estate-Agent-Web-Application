@@ -20,6 +20,7 @@
       ],
       "floorplan": "images/prop1floorplan.jpg",
       "url": "properties/prop1.html",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.6754952077836!2d0.0795099764709005!3d51.390641871786954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab82cc8f3cb1%3A0xc746da03b0c6c716!2sPetts%20Wood%20Rd%2C%20Petts%20Wood%2C%20Orpington%2C%20UK!5e0!3m2!1sen!2slk!4v1767175516338!5m2!1sen!2slk" ,
       "added": {
         "month": "October",
         "day": 12,
@@ -46,6 +47,7 @@
       ],
       "floorplan": "images/prop2floorplan.jpg",
       "url": "properties/prop2.html",
+      "map":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.6133297744354!2d0.06939267646980612!3d51.37340477178314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab6ac2bdc8d1%3A0xb0dde3c09939f924!2sCrofton%20Rd%2C%20Orpington%2C%20UK!5e0!3m2!1sen!2slk!4v1767175736699!5m2!1sen!2slk",
       "added": {
         "month": "September",
         "day": 14,
@@ -74,6 +76,7 @@
       ],
       "floorplan": "images/prop3floorplan.jpg",
       "url": "properties/prop3.html",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.7619167276393!2d0.043275376471954584!3d51.40742917179078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8aa4b32e28611%3A0xc55095467ee80433!2sChislehurst%20Rd%2C%20United%20Kingdom!5e0!3m2!1sen!2slk!4v1767175833257!5m2!1sen!2slk",
       "added": {
         "month": "November",
         "day": 5,
@@ -100,6 +103,7 @@
       ],
       "floorplan": "images/prop4floorplan.jpg",
       "url": "properties/prop4.html",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.982154043603!2d0.010337388974263867!3d51.40338259905223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8aa6e62559f07%3A0x7a40d87fea31d354!2sHigh%20St%2C%20Bromley%2C%20UK!5e0!3m2!1sen!2slk!4v1767175997120!5m2!1sen!2slk",
       "added": {
         "month": "January",
         "day": 20,
@@ -127,6 +131,7 @@
       ],
       "floorplan": "images/prop5floorplan.jpg",
       "url": "properties/prop5.html",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.219639830149!2d-0.017000423529746136!3d51.380641171784745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487600305529975d%3A0x851d014ed86414fa!2sStation%20Approach%2C%20West%20Wickham%2C%20UK!5e0!3m2!1sen!2slk!4v1767176089901!5m2!1sen!2slk",
       "added": {
         "month": "March",
         "day": 15,
@@ -153,6 +158,7 @@
       ],
       "floorplan": "images/prop6floorplan.jpg",
       "url": "properties/prop6.html",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.028698746559!2d0.01630557647165196!3d51.40252737178968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8aa691b8200ad%3A0xa37356b2c1d424a6!2sKentish%20Way%2C%20Bromley%2C%20UK!5e0!3m2!1sen!2slk!4v1767176179367!5m2!1sen!2slk",
       "added": {
         "month": "June",
         "day": 8,
@@ -179,6 +185,7 @@
       ],
       "floorplan": "images/prop7floorplan.jpg",
       "url": "properties/prop7.html",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.146076612445!2d-0.03644161098004663!3d51.51053599913869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602cc31d5040f%3A0x1d2e065952fb4dd0!2sOak%20Ln%2C%20London%2C%20UK!5e0!3m2!1sen!2slk!4v1767176276694!5m2!1sen!2slk",
       "added": {
         "month": "August",
         "day": 25,
