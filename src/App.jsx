@@ -26,9 +26,10 @@ function App() {
 
   // Add property to favourites (prevent duplicates)
   const addToFavourites = (propertyId) => {
-    if (!favourites.includes(propertyId)) {
-      setFavourites([...favourites, propertyId]);
-    }
+    setFavourites(prev => {
+    if (prev.includes(propertyId)) return prev; // prevent duplicates
+    return [...prev, propertyId]; // keep old favourites
+  });
   };
 
   // Remove property from favourites
@@ -81,7 +82,9 @@ function App() {
         </main>
 
         <footer className="app-footer">
-          <p>&copy; 2024 EstateAgent Pro. All rights reserved.</p>
+          <p>📍 London, United Kingdom | 📞 +44 20 56974 4587 | ✉️ info@homevista.com</p>
+          <p>&copy; 2024 Home Vista. All rights reserved.</p>
+          <p>Created by Punarjee.</p>
         </footer>
       </div>
     </DndProvider>
