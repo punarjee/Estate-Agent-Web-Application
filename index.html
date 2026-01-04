@@ -2,12 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my</title>
+
+    <!-- Theme & description -->
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Home Vista - Your one stop platform for finding the perfect property"
+    />
+
+    <!-- ✅ CSP FIXED FOR CLOUDINARY VIDEO -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval';
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://res.cloudinary.com;
+      media-src 'self' data: blob: https://res.cloudinary.com;
+      font-src 'self' data:;
+      connect-src 'self' https://res.cloudinary.com https:;
+      frame-src 'self' https:;
+    ">
+
+    <title>Home Vista</title>
   </head>
+
   <body>
+    <noscript>You need to enable JavaScript to run this application.</noscript>
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
