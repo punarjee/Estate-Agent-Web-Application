@@ -23,6 +23,14 @@ function App() {
     setCurrentView('search');
     setSelectedProperty(null);
   };
+  // Add property to favourites via drag-and-drop (prevent duplicates)
+const handleDrop = (propertyId) => {
+  setFavourites(prev => {
+    if (prev.includes(propertyId)) return prev; // prevent duplicate
+    return [...prev, propertyId]; // keep old favourites and add new one
+  });
+};
+
 
   // Add property to favourites (prevent duplicates)
   const addToFavourites = (propertyId) => {
@@ -69,6 +77,7 @@ function App() {
               addToFavourites={addToFavourites}
               removeFromFavourites={removeFromFavourites}
               clearFavourites={clearFavourites}
+              onDrop={handleDrop}
             />
           ) : (
             <PropertyPage
@@ -77,6 +86,7 @@ function App() {
               isFavourite={favourites.includes(selectedProperty?.id)}
               addToFavourites={addToFavourites}
               removeFromFavourites={removeFromFavourites}
+              
             />
           )}
         </main>
