@@ -56,7 +56,7 @@ const handleDrop = (propertyId) => {
         <header className="app-header">
 
             <video className="header-video" autoPlay loop muted playsInline>
-              <source src="/videos/header-video.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/djkyqg2ky/video/upload/header-video_srnb76.mp4?_s=vp-3.5.2" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
